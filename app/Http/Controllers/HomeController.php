@@ -9,11 +9,17 @@ class HomeController extends Controller
 {
     public function home () {
         $projects = Project::get();
-        return view('home', compact('projects'));
+        return view('index', compact('projects'));
     }
 
     public function signIn () {
 
         return view('signIn');
     }
+
+    public function show(Project $project)
+    {
+        return view('show', compact('project'));
+    }
+    
 }

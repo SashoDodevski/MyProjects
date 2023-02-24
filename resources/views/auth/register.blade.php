@@ -1,10 +1,10 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Register')
 
 @section('content')
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+<div class="flex grow flex-col justify-center items-center">
+    <form method="POST" action="{{ route('register') }}" class="lg:w-1/3 w-11/12 md:w-1/2 mx-auto">
         @csrf
 
         <!-- Name -->
@@ -54,5 +54,5 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+    </div>
 @endsection

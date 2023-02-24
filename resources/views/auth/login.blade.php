@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Log In')
 
@@ -46,4 +46,5 @@
         </div>
     </form>
 </div>
+
 @endsection
