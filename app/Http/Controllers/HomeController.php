@@ -14,15 +14,5 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('index', compact(['projects', 'user']));
     }
-
-    public function signIn () {
-
-        return view('signIn');
-    }
-
-    public function show(Project $project)
-    {
-        return view('show', compact('project'));
-    }
     
 }

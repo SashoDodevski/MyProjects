@@ -3,6 +3,7 @@
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -28,7 +29,7 @@ Route::put('projects/{project}', [ProjectController::class, 'update'])->name('pr
 Route::get('projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 Route::delete('projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
-Route::post('company', [CompanyController::class, 'store'])->name('company.store');
+Route::post('company', [EmailController::class, 'firstEmail'])->name('company.firstEmail');
 
 Route::get('/dashboard', function () {
     $projects = Project::get();

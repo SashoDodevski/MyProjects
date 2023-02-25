@@ -125,7 +125,7 @@
                         <!-- Modal body -->
                         <div class="flex grow flex-col justify-center items-center">
                             <p class="mt-3 ml-6 text-gray-700 mr-auto">Please fill in the form below and we will contact you very soon</p>
-                            <form method="POST" action="{{ route('company.store') }}" class="w-11/12 mx-auto my-3">
+                            <form method="POST" action="{{ route('company.firstEmail') }}" class="w-11/12 mx-auto my-3">
                                 @csrf
 
                                 <!-- Company -->
