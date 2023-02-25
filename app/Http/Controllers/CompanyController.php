@@ -19,7 +19,7 @@ class CompanyController extends Controller
 
         $company->save();
 
-        return to_route('index')->with('success', 'We registered Your company! <br>We will contact You very soon.');
+        return to_route('index')->with('success', 'We registered Your company! We will contact You very soon.');
 
     }
 }
