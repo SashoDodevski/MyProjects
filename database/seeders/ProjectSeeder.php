@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
             array_push($projects, [
                 'title' => fake()->words(3, true),
                 'subtitle' => fake()->sentence(),
-                'description' => fake()->sentences(5, true),
+                'description' => fake()->sentences(3, true),
                 'image' => fake()->imageUrl(),
                 'url' => fake()->url(),
                 'created_at' => now(),

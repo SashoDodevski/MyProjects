@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProjectController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::get('projects/{project}/edit', [ProjectController::class, 'edit'])->name(
 Route::put('projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
 Route::get('projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 Route::delete('projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+
+Route::post('company', [CompanyController::class, 'store'])->name('company.store');
 
 Route::get('/dashboard', function () {
     $projects = Project::get();
