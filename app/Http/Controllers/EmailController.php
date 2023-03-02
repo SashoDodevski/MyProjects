@@ -16,6 +16,6 @@ class EmailController extends Controller
 
         $company = $request->company;
         
-        return to_route('index')->with('success', 'We registered Your company! <br>We will contact You very soon.');
+        return to_route('index')->with('success', 'We registered Your company! Check Your inbox for new email.');
     }
 }

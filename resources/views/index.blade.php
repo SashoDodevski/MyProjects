@@ -4,11 +4,7 @@
 
 @section('content')
 @include('layouts/banner')
-@if(Session::has('success'))
-<div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 text-center w-full" role="alert">
-    {{ Session::get('success') }}
-</div>
-@endif
+
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8">
 

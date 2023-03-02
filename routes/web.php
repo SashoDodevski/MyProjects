@@ -20,8 +20,7 @@ use App\Http\Controllers\ProjectController;
 */
 
 
-Route::get('/', [HomeController::class, 'home'])->name('index');
-Route::get('projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/', [ProjectController::class, 'index'])->name('index');
 Route::get('projects/create', [ProjectController::class, 'create'])->name('projects.create');
 Route::post('projects', [ProjectController::class, 'store'])->name('projects.store');
 Route::get('projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
@@ -33,7 +32,7 @@ Route::post('company', [EmailController::class, 'firstEmail'])->name('company.fi
 
 Route::get('/dashboard', function () {
     $projects = Project::get();
-    return view('dashboard', compact('projects'));
+    return view('admins.dashboard', compact('projects'));
 })->middleware(['auth', 'verified', 'role:admin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

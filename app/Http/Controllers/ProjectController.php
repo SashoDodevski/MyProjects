@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -17,7 +18,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::get();
+        $user = Auth::user();
+        return view('index', compact(['projects', 'user']));
     }
 
     /**
@@ -52,7 +55,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
+        return view('show', compact('project'));
     }
 
     /**
